@@ -1,11 +1,21 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "dee66929-4cb8-4ba8-bd36-0aa1bb2183d6": {
-      "ProjectGuid": "dee66929-4cb8-4ba8-bd36-0aa1bb2183d6",
+    "15967dcc-937c-42d6-83a8-dddffda43d4d": {
+      "ProjectGuid": "15967dcc-937c-42d6-83a8-dddffda43d4d",
       "DisplayName": "CryptoCurrencyWallet",
       "ColorIndex": 0
+    },
+    "7faafdd4-a697-491a-badf-1603dc97b06f": {
+      "ProjectGuid": "7faafdd4-a697-491a-badf-1603dc97b06f",
+      "DisplayName": "CryptoCurrency",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

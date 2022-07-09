@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "EYfvl1SqpXFvx9r1gtL3XBeb7d/d4Vrrmjtf3WOgbsu1CE2r4zwZob7Tg42dYUIUv29A/ZL2Kcno8D+jqo0wIw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vadym.frynas\\source\\repos\\CryptoCurrencyWallet\\CryptoCurrency\\CryptoCurrency.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vadym.frynas\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.26\\microsoft.netcore.app.host.win-x64.3.1.26.nupkg.sha512"
+  ],
+  "logs": []
+}

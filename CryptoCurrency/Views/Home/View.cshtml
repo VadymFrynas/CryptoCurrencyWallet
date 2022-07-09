@@ -1,0 +1,21 @@
+﻿@model List<AccountProfile>
+@{
+    ViewData["Title"] = "Account";
+}
+@foreach (var t in Model)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>FirstName:</strong> <code>@t.FirstName</code>
+    </p>
+
+    <p>
+        <strong>LastName:</strong> <code>@t.LastName</code>
+    </p>
+    <h1>
+        Next:
+        </h1>
+}
+

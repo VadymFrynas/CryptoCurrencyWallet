@@ -1,0 +1,108 @@
+﻿@using CryptoCurrency.Controllers;
+@{ 
+    Layout = null;
+    ViewData["Title"] = "Account";
+}
+<! doctype html>
+<html>
+<head>
+    <title>
+        Hello Infopulse team!
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    </head>
+<body>
+    <p>Account profile</p>
+    @foreach (AccountProfile t in ViewBag.AccountProfiles)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>FirstName:</strong> <code>@t.FirstName</code>
+    </p>
+
+    <p>
+        <strong>LastName:</strong> <code>@t.LastName</code>
+    </p>
+}
+<p>Currency</p>
+    @foreach (Currency t in ViewBag.Currencies)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>Name:</strong> <code>@t.Name</code>
+    </p>
+
+    <p>
+        <strong>Price:</strong> <code>@t.Price</code>
+    </p>
+    <p>
+        <strong>MarketCap:</strong> <code>@t.MarketCap</code>
+    </p>
+}
+<p>Earn</p>
+    @foreach (EarnItem t in ViewBag.EarnItems)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>Currency name:</strong> <code>@t.Currency.Name</code>
+    </p>
+    <p>
+        <strong>Date of starting:</strong> <code>@t.StartingDate</code>
+    </p>
+    <p>
+        <strong>Time for earn:</strong> <code>@t.EarnTime</code>
+    </p>
+    <p>
+        <strong>Percentage during this time:</strong> <code>@t.Percentage</code>
+    </p>
+}
+<p>Transaction</p>
+    @foreach (Transaction t in ViewBag.Transactions)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>Currency name:</strong> <code>@t.Currency.Name</code>
+    </p>
+    <p>
+        <strong>Amount:</strong> <code>@t.Amount</code>
+    </p>
+    <p>
+        <strong>Time of transaction:</strong> <code>@t.Time</code>
+    </p>
+}
+<p>Wallet</p>
+    @foreach (Wallet t in ViewBag.Wallets)
+{
+    <p>
+        <strong>Id:</strong> <code>@t.Id</code>
+    </p>
+    <p>
+        <strong>Currencies name:</strong> <code>@t.Profile.FirstName</code>
+    </p>
+    <p>
+        <strong>Profile Currencies:</strong>
+        @foreach(Currency currency in t.ProfileCurrencies)
+            {
+                <strong>Currency name:</strong> <code>@currency.Name</code>
+            }
+        </p>
+    <p>
+        <strong>Earn:</strong> 
+         @foreach(EarnItem earn in t.Earn)
+            {
+                <strong>Earn name :</strong> <code>@earn.Currency.Name</code>
+            }
+    </p>
+}
+    </body>
+</html>
