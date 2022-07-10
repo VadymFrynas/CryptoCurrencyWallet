@@ -1,8 +1,8 @@
-﻿using CryptoCurrency.Models;
+﻿using CryptoCurrency.Data;
+using CryptoCurrency.Models;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,11 +13,13 @@ namespace CryptoCurrency.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly AccountContext accountContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AccountContext accountContext)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.accountContext = accountContext;
         }
 
         public IActionResult Index()
