@@ -2,3 +2,6 @@
 /CryptoCurrency/bin
 /CryptoCurrencyWallet/bin
 /CryptoCurrencyWallet/obj
+/.vs
+/CryptoCurrencyWallet.Data/obj
+/CryptoCurrencyWallet.Data/bin

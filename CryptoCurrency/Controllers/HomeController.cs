@@ -1,6 +1,5 @@
 ﻿using CryptoCurrency.Data;
 using CryptoCurrency.Models;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -24,6 +23,7 @@ namespace CryptoCurrency.Controllers
 
         public IActionResult Index()
         {
+            var r = GetAccountProfiles();
             ViewBag.AccountProfiles = GetAccountProfiles();
             ViewBag.Currencies = GetCurrencies();
             ViewBag.EarnItems = GetEarnItems();
@@ -59,16 +59,20 @@ namespace CryptoCurrency.Controllers
             new Currency
             {
                 Id = 1,
+                WorldRank = 1,
                 MarketCap = 100000,
-                Name = "SomeName1",
-                Price = 1000
+                Name = "Bitcoin",
+                Price = 22000,
+                LinkToBio = "https://coinmarketcap.com/currencies/bitcoin/"
             },
             new Currency
             {
                 Id = 2,
+                WorldRank = 2,
                 MarketCap = 100000,
-                Name = "SomeName2",
-                Price = 1000
+                Name = "Ethereum",
+                Price = 1300,
+                LinkToBio = "https://coinmarketcap.com/currencies/ethereum/"
             }
         };
 

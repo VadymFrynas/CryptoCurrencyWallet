@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using CryptoCurrency.Models;
+﻿using CryptoCurrency.Models;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +8,7 @@ namespace CryptoCurrency.Data
     {
         public AccountContext(DbContextOptions<AccountContext> options) : base(options) 
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

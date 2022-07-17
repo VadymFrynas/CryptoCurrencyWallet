@@ -22,7 +22,6 @@ namespace CryptoCurrency
         {
             services.AddControllersWithViews();
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            // добавляем контекст ApplicationContext в качестве сервиса в приложение
             services.AddDbContext<AccountContext>(options =>
                 options.UseSqlServer(connection));
         }
