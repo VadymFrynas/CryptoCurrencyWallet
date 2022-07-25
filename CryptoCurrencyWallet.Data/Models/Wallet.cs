@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CryptoCurrency.Models
+namespace CryptoCurrencyWallet.Data.Models
 {
     public class Wallet
     {

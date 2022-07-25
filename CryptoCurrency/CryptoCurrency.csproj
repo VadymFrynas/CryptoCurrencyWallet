@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CryptoCurrencyWallet.Data\CryptoCurrencyWallet.Data.csproj" />
+    <ProjectReference Include="..\CryptoCurrencyWallet.Service\CryptoCurrencyWallet.Service.csproj" />
   </ItemGroup>
 
 </Project>

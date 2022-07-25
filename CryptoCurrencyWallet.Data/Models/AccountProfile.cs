@@ -1,4 +1,4 @@
-﻿namespace CryptoCurrency.Models
+﻿namespace CryptoCurrencyWallet.Data.Models
 {
     public class AccountProfile
     {

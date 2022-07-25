@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CryptoCurrency.Models
+namespace CryptoCurrencyWallet.Data.Models
 {
     public class Transaction
     {

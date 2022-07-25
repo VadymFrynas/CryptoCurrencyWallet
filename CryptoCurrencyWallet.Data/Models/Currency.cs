@@ -1,19 +1,25 @@
-﻿namespace CryptoCurrency.Models
+﻿using System;
+
+namespace CryptoCurrencyWallet.Data.Models
 {
     public class Currency
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
-        public int WorldRank { get; set; }
+        public long Rank { get; set; }
 
         public string Name { get; set; }
 
-        public string ShortName { get; set; }
+        public string Symbol { get; set; }
 
-        public double Price { get; set; }
+        public string Slug { get; set; }
 
-        public double MarketCap { get; set; }
+        public long IsActive { get; set; }
 
-        public string LinkToBio { get; set; }
+        public DateTimeOffset FirstHistoricalData { get; set; }
+
+        public DateTimeOffset LastHistoricalData { get; set; }
+
+        public Platform Platform { get; set; }
     }
 }

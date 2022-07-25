@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrencyWallet", "CryptoCurrencyWallet\CryptoCurrencyWallet.csproj", "{15967DCC-937C-42D6-83A8-DDDFFDA43D4D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrency", "CryptoCurrency\CryptoCurrency.csproj", "{7FAAFDD4-A697-491A-BADF-1603DC97B06F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCurrencyWallet.Data", "CryptoCurrencyWallet.Data\CryptoCurrencyWallet.Data.csproj", "{9C5D505D-E0AA-4A49-A4FA-DC144A392595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrencyWallet.Data", "CryptoCurrencyWallet.Data\CryptoCurrencyWallet.Data.csproj", "{9C5D505D-E0AA-4A49-A4FA-DC144A392595}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrencyWallet.Service", "CryptoCurrencyWallet.Service\CryptoCurrencyWallet.Service.csproj", "{8A7EEF80-504D-4AEC-8431-CC3561F94CC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15967DCC-937C-42D6-83A8-DDDFFDA43D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15967DCC-937C-42D6-83A8-DDDFFDA43D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15967DCC-937C-42D6-83A8-DDDFFDA43D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15967DCC-937C-42D6-83A8-DDDFFDA43D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FAAFDD4-A697-491A-BADF-1603DC97B06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FAAFDD4-A697-491A-BADF-1603DC97B06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FAAFDD4-A697-491A-BADF-1603DC97B06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{9C5D505D-E0AA-4A49-A4FA-DC144A392595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C5D505D-E0AA-4A49-A4FA-DC144A392595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C5D505D-E0AA-4A49-A4FA-DC144A392595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7EEF80-504D-4AEC-8431-CC3561F94CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7EEF80-504D-4AEC-8431-CC3561F94CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7EEF80-504D-4AEC-8431-CC3561F94CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7EEF80-504D-4AEC-8431-CC3561F94CC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

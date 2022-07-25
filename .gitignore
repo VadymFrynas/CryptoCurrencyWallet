@@ -5,3 +5,5 @@
 /.vs
 /CryptoCurrencyWallet.Data/obj
 /CryptoCurrencyWallet.Data/bin
+/CryptoCurrencyWallet.Service/obj
+/CryptoCurrencyWallet.Service/bin
