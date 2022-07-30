@@ -3,16 +3,18 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using CryptoCurrency.Data;
+using CryptoCurrencyWallet.Data;
 using Microsoft.EntityFrameworkCore;
 using CryptoCurrencyWallet.Service;
 using CryptoCurrencyWallet.Service.Interfaces;
-using CryptoCurrencyWallet.Data;
-using CryptoCurrency.Models;
 using Microsoft.AspNetCore.Identity;
 using CryptoCurrencyWallet.Data.Models;
+using Microsoft.AspNetCore.Http;
+using JavaScriptEngineSwitcher.V8;
+using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
+using React.AspNet;
 
-namespace CryptoCurrency
+namespace CryptoCurrencyWallet
 {
     public class Startup
     {
@@ -23,15 +25,13 @@ namespace CryptoCurrency
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(connection));
             services.AddScoped<ICurrencyServices, CurrencyServices>();
-            services.AddScoped<IApplicationContext, ApplicationContext>();
+            //services.AddScoped<IApplicationContext, ApplicationContext>();
             services.AddScoped<IEmailServices, EmailServices>();
             var emailConfig = Configuration
                 .GetSection("EmailConfiguration")
@@ -65,6 +65,14 @@ namespace CryptoCurrency
             // .AddEntityFrameworkStores<AccountContext>()
             // .AddDefaultTokenProviders();
             //.AddTokenProvider<EmailConfirmationTokenProvider<User>>("emailconfirmation");
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
+            services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName)
+              .AddV8();
+            services.AddControllersWithViews();
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,10 +89,12 @@ namespace CryptoCurrency
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseReact(config =>{ });
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

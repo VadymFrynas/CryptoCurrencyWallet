@@ -1,14 +1,14 @@
 ﻿using CryptoCurrencyWallet.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using CryptoCurrencyWallet.Data;
 
-namespace CryptoCurrency.Data
+namespace CryptoCurrencyWallet.Data
 {
-    public class ApplicationContext : IdentityDbContext<User>, IApplicationContext
+    public class ApplicationContext : IdentityDbContext<User>
     {
-        public ApplicationContext(DbContextOptions options) : base(options) 
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) 
         {
+            //Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -17,7 +17,6 @@ namespace CryptoCurrency.Data
 
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
-
 
         public DbSet<AccountProfile> Accounts { get; set; }
         public DbSet<Currency> Currencies { get; set; }

@@ -1,7 +1,11 @@
-﻿@using CryptoCurrency.Controllers;
+﻿@using CryptoCurrencyWallet.Controllers;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 @{ 
     ViewData["Title"] = "Account";
 }
+
 <! doctype html>
 <html>
 <head>
@@ -54,17 +58,20 @@
     </script>
 </head>
 <body>
-    <div id="currencyList">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Market Cap</th>
-                </tr>
-            </thead>
-            <tbody>@*
+    @if (!SignInManager.IsSignedIn(User))
+    {
+        <div id="currencyList">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Market Cap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*
                @for(int i = 0; i < ViewBag.Currencies.Count; i++)
                {
                     var currency = ViewBag.Currencies[i];
@@ -77,39 +84,49 @@
                     <td>@currency.MarketCap</td>
                     </tr>
                }*@
-                    
-            </tbody>
 
-        </table>
-        <p>Useful Links</p>
-        <ul>
-    <li>
-        <div>
-             <img src="images/CoinMarketCap.png" height="50" width="50"/>
-             <a href="https://coinmarketcap.com/">CoinMarketCap</a>
+                </tbody>
+
+            </table>
+            <p>Useful Links</p>
+            <ul>
+                <li>
+                    <div>
+                        <img src="images/CoinMarketCap.png" height="50" width="50"/>
+                        <a href="https://coinmarketcap.com/">CoinMarketCap</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/TradingView.png" height="50" width="50"/>
+                        <a href="https://ru.tradingview.com/">TradingView</a>
+                    </div>
+                </li>
+            </ul>
+
+            <label for="fin">First coef:</label><br>
+            <input type="text" id="fin" name="fin" value=""><br>
+            <label for="sin">Second coef:</label><br>
+            <input type="text" id="sin" name="sin" value=""><br><br>
+            <label for="thin">Third coef:</label><br>
+            <input type="text" id="thin" name="thin" value=""><br><br>
+            <button onclick="squareRoot()">Solve equation</button>
+            <label for="foin">Enter string:</label><br>
+            <input type="text" id="foin" name="foin" value=""><br><br>
+            <button onclick="strLength()">Count length</button>
+
         </div>
-    </li>
-    <li>
-        <div>
-             <img src="images/TradingView.png" height="50" width="50"/>
-             <a href="https://ru.tradingview.com/">TradingView</a>
-        </div>
-    </li>
-</ul>
+    }
+    else
+    {
+        <div id="content"></div>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+         
+        <script src="@Url.Content("~/js/currencyTable.jsx")"></script>
+          
+    }
 
-    <label for="fin">First coef:</label><br>
-    <input type="text" id="fin" name="fin" value=""><br>
-    <label for="sin">Second coef:</label><br>
-    <input type="text" id="sin" name="sin" value=""><br><br>
-    <label for="thin">Third coef:</label><br>
-    <input type="text" id="thin" name="thin" value=""><br><br>
-    <button onclick="squareRoot()">Solve equation</button>
-    <label for="foin">Enter string:</label><br>
-    <input type="text" id="foin" name="foin" value=""><br><br>
-    <button onclick="strLength()">Count length</button>
-
-
-    </div>
-
-    </body>
+</body>
 </html>

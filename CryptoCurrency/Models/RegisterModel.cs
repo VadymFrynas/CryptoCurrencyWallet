@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CryptoCurrency.Models
+namespace CryptoCurrencyWallet.Models
 {
     public class RegisterModel
     {

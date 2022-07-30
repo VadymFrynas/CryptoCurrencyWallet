@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CryptoCurrency.Data
+namespace CryptoCurrencyWallet.Data
 {
     public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
     {

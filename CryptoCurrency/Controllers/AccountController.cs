@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using CryptoCurrencyWallet.Data.Models;
 using CryptoCurrencyWallet.Service.Interfaces;
-using CryptoCurrency.Models;
+using CryptoCurrencyWallet.Models;
 using CryptoCurrencyWallet.Service;
 
-namespace CryptoCurrency.Controllers
+namespace CryptoCurrencyWallet.Controllers
 {
     public class AccountController : Controller
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrency", "CryptoCurrency\CryptoCurrency.csproj", "{7FAAFDD4-A697-491A-BADF-1603DC97B06F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrencyWallet", "CryptoCurrency\CryptoCurrencyWallet.csproj", "{7FAAFDD4-A697-491A-BADF-1603DC97B06F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCurrencyWallet.Data", "CryptoCurrencyWallet.Data\CryptoCurrencyWallet.Data.csproj", "{9C5D505D-E0AA-4A49-A4FA-DC144A392595}"
 EndProject

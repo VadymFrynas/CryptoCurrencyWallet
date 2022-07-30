@@ -1,11 +1,10 @@
-﻿using CryptoCurrency.Data;
-using CryptoCurrency.Models;
-using CryptoCurrencyWallet.Data;
+﻿using CryptoCurrencyWallet.Data;
+using CryptoCurrencyWallet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace CryptoCurrency.Controllers
+namespace CryptoCurrencyWallet.Controllers
 {
     public class HomeController : Controller
     {
