@@ -89,7 +89,12 @@ namespace CryptoCurrencyWallet
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseReact(config =>{ });
+            app.UseReact(config =>
+            {
+                config
+                    .AddScript("~/js/remarkable.min.js")
+                    .AddScript("~/js/currencyTable.jsx");
+            });
             app.UseStaticFiles();
 
             app.UseRouting();

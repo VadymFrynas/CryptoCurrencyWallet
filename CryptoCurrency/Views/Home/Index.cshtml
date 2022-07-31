@@ -15,6 +15,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/customTable.css">
     <script>
        function squareRoot() 
        {
@@ -119,13 +120,31 @@
     }
     else
     {
+        <h1>Your Currencies</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dom</td>
+                    <td>6000</td>
+                </tr>
+                <tr>
+                    <td>Melissa</td>
+                    <td>5150</td>
+                </tr>
+            </tbody>
+        </table>
         <div id="content"></div>
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
          
         <script src="@Url.Content("~/js/currencyTable.jsx")"></script>
-          
     }
 
 </body>
